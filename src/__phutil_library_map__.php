@@ -8,7 +8,30 @@
  */
 phutil_register_library_map(array(
   '__library_version__' => 2,
-  'class' => array(),
+  'class' => array(
+    'ManiphestRemarkupRule' => 'remarkup/RequirementMarkupRule.php',
+    'PhabricatorRequirementsApplication' => 'application/PhabricatorRequirementsApplication.php',
+    'Requirement' => 'storage/Requirement.php',
+    'RequirementDAO' => 'storage/RequirementDAO.php',
+    'RequirementQuery' => 'query/RequirementQuery.php',
+    'RequirementsDetailsController' => 'controller/RequirementsDetailController.php',
+    'RequirementsOverviewController' => 'controller/RequirementsOverviewController.php',
+    's RequirementSchemaSpe' => 'storage/RequirementSchemaSpecs.php',
+  ),
   'function' => array(),
-  'xmap' => array(),
+  'xmap' => array(
+    'ManiphestRemarkupRule' => 'PhabricatorObjectRemarkupRule',
+    'PhabricatorRequirementsApplication' => 'PhabricatorApplication',
+    'Requirement' => array(
+      'ManiphestDAO',
+      'PhabricatorMarkupInterface',
+      'PhabricatorMentionableInterface',
+      'PhrequentTrackableInterface',
+    ),
+    'RequirementDAO' => 'PhabricatorLiskDAO',
+    'RequirementQuery' => 'PhabricatorCursorPagedPolicyAwareQuery',
+    'RequirementsDetailsController' => 'PhabricatorController',
+    'RequirementsOverviewController' => 'PhabricatorController',
+    's RequirementSchemaSpe' => 'ds PhabricatorConfigSchemaS',
+  ),
 ));
